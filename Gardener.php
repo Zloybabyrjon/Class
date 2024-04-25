@@ -1,7 +1,6 @@
 <?php
 
-require_once "ClassTomato.php";
-require_once "ClassTomatoBush.php";
+
 
 class Gardener
 {
@@ -26,20 +25,8 @@ class Gardener
             echo 'Томаты еще не созрели!' . PHP_EOL;
         }
     }
-    public static function KnowledgeBase(): void
+    public static function knowledgeBase(): void
     {
         echo "Справка по садоводству: " . PHP_EOL;
     }
 }
-
-$plant = new TomatoBush(3);
-$gardener = new Gardener("Валера", $plant);
-
-Gardener::KnowledgeBase();
-
-$gardener->work($plant) . PHP_EOL;
-$gardener->harvest() . PHP_EOL;
-$gardener->work($plant) . PHP_EOL;
-$gardener->harvest() . PHP_EOL;
-$gardener->work($plant) . PHP_EOL;
-$gardener->harvest() . PHP_EOL;

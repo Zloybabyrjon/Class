@@ -1,8 +1,10 @@
 <?php
 
+require "Tomato.php";
+
 class TomatoBush
 {
-    public $tomatoes = [];
+    public array $tomatoes = [];
 
     public function __construct(int $numTomatoes)
     {
@@ -21,9 +23,10 @@ class TomatoBush
     public function allAreRipe(): bool
     {
         foreach ($this->tomatoes as $tomato) {
-            if ($tomato->isRipe()) {
-                return true;
+            if (!$tomato->isRipe()) {
+                return false;
             }
+            return true;
         }
     }
     public function giveAwayAll(): array
